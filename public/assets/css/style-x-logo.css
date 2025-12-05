@@ -1,0 +1,228 @@
+/* Style X Logo CSS */
+.style-x-logo-sm {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+}
+
+.style-x-logo-lg {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+}
+
+.style-text {
+    color: #6366f1;
+    margin-right: 2px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.x-text {
+    color: #000000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+}
+
+/* Bỏ dấu gạch dưới */
+.x-text::after {
+    display: none;
+}
+
+/* Dark mode styles */
+.logo-dark .style-text {
+    color: #6366f1;
+}
+
+.logo-dark .x-text {
+    color: #000000;
+}
+
+/* Light mode styles */
+.logo-light .style-text {
+    color: #ffffff;
+}
+
+.logo-light .x-text {
+    color: #f3f4f6; /* light text for dark background */
+}
+
+/* Hover effects */
+.navbar-brand-box a:hover .x-text {
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+.logo-light:hover .x-text {
+    color: #e5e7eb; /* slightly brighter on hover */
+}
+
+/* Animation for logo */
+.style-x-logo-sm, .style-x-logo-lg {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand-box a:hover .style-x-logo-sm,
+.navbar-brand-box a:hover .style-x-logo-lg {
+    transform: scale(1.05);
+}
+
+/* Fashion dark theme for sidebar */
+.app-menu.navbar-menu {
+    background-color: #000000; /* pure black */
+}
+
+#navbar-nav .menu-title span,
+#navbar-nav .nav-link {
+    color: #e5e7eb; /* gray-200 */
+}
+
+#navbar-nav .nav-link .ri,
+#navbar-nav .nav-link i {
+    color: #d1d5db; /* gray-300 */
+}
+
+#navbar-nav .nav-link:hover,
+#navbar-nav .nav-link:focus {
+    background-color: #111111; /* near-black */
+    color: #ffffff;
+}
+
+#navbar-nav .nav-link.active,
+#navbar-nav .menu-link[aria-expanded="true"] {
+    background-color: #1a1a1a; /* dark gray for active */
+    color: #ffffff;
+}
+
+.menu-dropdown {
+    background-color: #0a0a0a; /* deep black */
+}
+
+.menu-dropdown .nav-link {
+    background-color: transparent !important;
+    color: #e5e7eb !important;
+}
+
+.menu-dropdown .nav-link:hover,
+.menu-dropdown .nav-link:focus {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+}
+
+/* Extra hard overrides to remove any leftover theme blue in submenu items */
+.navbar-menu .menu-dropdown .nav-link,
+.navbar-menu .menu-dropdown .nav-link:not(.collapsed),
+.navbar-menu .menu-dropdown .nav .nav-link,
+.navbar-menu .menu-dropdown .nav-link[aria-expanded="true"],
+.navbar-menu .menu-dropdown .nav-link.active {
+    background: #000000 !important;
+    color: #e5e7eb !important;
+    border-color: transparent !important;
+}
+
+.navbar-menu .menu-dropdown .nav-link:hover,
+.navbar-menu .menu-dropdown .nav-link:focus {
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+
+/* Ensure nested dropdowns inherit black */
+.navbar-menu .menu-dropdown .menu-dropdown {
+    background-color: #000000 !important;
+}
+
+/* Force default/collapsed dropdown panels to black */
+.navbar-menu .menu-dropdown,
+.navbar-menu .collapse.menu-dropdown,
+.navbar-menu .collapse.menu-dropdown.show,
+.navbar-menu .menu-dropdown .nav,
+.navbar-menu .menu-dropdown .nav-item {
+    background-color: #000000 !important;
+    border-color: transparent !important;
+}
+
+/* Remove any theme gradient/overlay leftovers */
+.navbar-menu .menu-dropdown::before,
+.navbar-menu .menu-dropdown::after {
+    background: transparent !important;
+}
+
+/* subtle divider */
+.navbar-nav .nav-item + .nav-item {
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Collapsed/mini sidebar ensure black theme */
+body[data-sidebar-size="sm"] .app-menu.navbar-menu,
+.vertical-sidebar-enable .app-menu.navbar-menu,
+.sidebar-enable .app-menu.navbar-menu {
+    background-color: #000000 !important;
+}
+
+body[data-sidebar-size="sm"] #navbar-nav .nav-link,
+.vertical-sidebar-enable #navbar-nav .nav-link,
+.sidebar-enable #navbar-nav .nav-link {
+    color: #e5e7eb;
+}
+
+body[data-sidebar-size="sm"] #navbar-nav .nav-link:hover,
+.vertical-sidebar-enable #navbar-nav .nav-link:hover,
+.sidebar-enable #navbar-nav .nav-link:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* Brand box keep black */
+.navbar-brand-box {
+    background-color: transparent;
+}
+
+/* Ensure mini logo tile stays black in collapsed mode */
+.navbar-brand-box .logo .logo-sm,
+body[data-sidebar-size="sm"] .navbar-brand-box .logo .logo-sm {
+    background-color: #000000 !important;
+}
+
+/* Fix any leftover default submenu panel background */
+body[data-sidebar-size="sm"] .menu-dropdown,
+.vertical-sidebar-enable .menu-dropdown,
+.sidebar-enable .menu-dropdown {
+    background-color: #000000 !important;
+}
+
+/* NUCLEAR OPTION: Force ALL submenu items to black */
+.navbar-menu .menu-dropdown .nav-item .nav-link,
+.navbar-menu .menu-dropdown .nav-item .nav-link:not(.collapsed),
+.navbar-menu .menu-dropdown .nav-item .nav-link[aria-expanded="true"],
+.navbar-menu .menu-dropdown .nav-item .nav-link.active,
+.navbar-menu .menu-dropdown .nav-item .nav-link:hover,
+.navbar-menu .menu-dropdown .nav-item .nav-link:focus,
+.navbar-menu .menu-dropdown .nav-item .nav-link:visited,
+.navbar-menu .menu-dropdown .nav-item .nav-link:link {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    color: #e5e7eb !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-menu .menu-dropdown .nav-item .nav-link:hover,
+.navbar-menu .menu-dropdown .nav-item .nav-link:focus {
+    background-color: #111111 !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+
+/* Override any Bootstrap or theme classes */
+.navbar-menu .menu-dropdown .nav-item .nav-link.bg-primary,
+.navbar-menu .menu-dropdown .nav-item .nav-link.bg-info,
+.navbar-menu .menu-dropdown .nav-item .nav-link.bg-secondary,
+.navbar-menu .menu-dropdown .nav-item .nav-link.bg-light,
+.navbar-menu .menu-dropdown .nav-item .nav-link.bg-dark {
+    background-color: #000000 !important;
+    background: #000000 !important;
+}

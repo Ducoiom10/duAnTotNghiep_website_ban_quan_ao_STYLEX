@@ -1,0 +1,356 @@
+/* ================================================================================================
+   CHAT BOX STYLES - Bootstrap Enhanced
+   ================================================================================================ */
+
+/* Chat Icon Button */
+#chatIconWrapper {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#chatIconWrapper button {
+    transition: all 0.3s ease;
+    display: flex !important;
+    visibility: visible !important;
+}
+
+#chatIconWrapper button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+#chatIconWrapper button i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Chat Box Container */
+#chatBoxContainer {
+    display: none !important;
+    flex-direction: column;
+    animation: slideUp 0.3s ease;
+    transform-origin: bottom right;
+    border: 1px solid #e0e0e0 !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+#chatBoxContainer.show {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat Header - Using Bootstrap classes */
+#chatBoxContainer .card-header {
+    min-height: 70px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#chatBoxContainer .card-header button {
+    text-decoration: none !important;
+    transition: background 0.3s ease;
+}
+
+#chatBoxContainer .card-header button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    text-decoration: none !important;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Chat Messages Area */
+#chatBoxContainer .card-body {
+    position: relative !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+}
+
+#chatMessages {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#chatMessages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatMessages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Welcome Message - Using Bootstrap classes */
+#chatMessages > div {
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Message Item - Using Bootstrap classes */
+.chat-message {
+    display: flex !important;
+    gap: 10px !important;
+    animation: fadeIn 0.3s ease !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-message.user {
+    flex-direction: row-reverse;
+}
+
+.chat-message-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.chat-message.user .chat-message-avatar {
+    background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+}
+
+.chat-message-content {
+    max-width: 75% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+}
+
+.chat-message-bubble {
+    padding: 8px 12px !important;
+    border-radius: 14px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    max-width: 100% !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.chat-message.admin .chat-message-bubble {
+    background: #f0f0f0;
+    color: #333;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message.user .chat-message-bubble {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message-time {
+    font-size: 11px;
+    color: #999;
+    padding: 0 5px;
+}
+
+.chat-message.user .chat-message-time {
+    text-align: right;
+}
+
+/* Chat Input Area - Using Bootstrap classes */
+#chatInput {
+    height: 44px !important;
+    line-height: 44px !important;
+    vertical-align: middle !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#chatInput:focus {
+    border-color: #1a1a1a !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0,0,0,0.1) !important;
+    background: #fff !important;
+    outline: none !important;
+}
+
+#chatSendBtn {
+    border-radius: 50% !important;
+    width: 38px !important;
+    height: 38px !important;
+    top: 3px !important;
+    right: 3px !important;
+    bottom: auto !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#chatSendBtn:hover {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%) !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25) !important;
+}
+
+/* Ensure input container aligns properly */
+#chatBoxContainer .card-footer {
+    display: flex !important;
+    align-items: center !important;
+    background: #fff !important;
+    border-top: 1px solid #e9ecef !important;
+}
+
+#chatBoxContainer .card-footer > div {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#chatCloseBtn {
+    text-decoration: none !important;
+}
+
+#chatCloseBtn:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    text-decoration: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #chatBoxContainer {
+        width: calc(100% - 40px) !important;
+        right: 20px !important;
+        bottom: 150px !important;
+        height: 420px !important;
+    }
+
+    #chatIconWrapper {
+        bottom: 80px !important;
+        right: 20px !important;
+    }
+
+    #chatIconWrapper button {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #chatBoxContainer {
+        width: calc(100% - 20px) !important;
+        right: 10px !important;
+        bottom: 130px !important;
+        height: 380px !important;
+    }
+
+    #chatIconWrapper {
+        bottom: 70px !important;
+        right: 10px !important;
+    }
+}
+
+/* Typing Indicator */
+.chat-typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 18px;
+    width: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-typing-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #999;
+    animation: typing 1.4s infinite;
+}
+
+.chat-typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.chat-typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
